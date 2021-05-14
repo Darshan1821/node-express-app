@@ -5,7 +5,13 @@ const adminRoutes = express.Router();
 const products = [];
 
 adminRoutes.get('/product', (req, res, next) => {
-    res.render('add-product', { title : 'Add Product', path : '/admin/product' });
+    res.render('add-product', { 
+        title : 'Add Product', 
+        path : '/admin/product',
+        formsCSS: true,
+        productCSS: true,
+        activeAddProduct: true
+     });
 });
 
 adminRoutes.post('/product', (req, res, next) => {
