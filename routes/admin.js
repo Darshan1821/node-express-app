@@ -7,10 +7,7 @@ const products = [];
 adminRoutes.get('/product', (req, res, next) => {
     res.render('add-product', { 
         title : 'Add Product', 
-        path : '/admin/product',
-        formsCSS: true,
-        productCSS: true,
-        activeAddProduct: true
+        path : '/admin/product'
      });
 });
 

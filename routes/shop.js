@@ -8,11 +8,8 @@ shopRoutes.get('/', (req, res, next) => {
     res.render('shop', { 
         products : products, 
         title : 'My Shop', 
-        path : '/', 
-        hasProducts: products.length > 0,
-        activeShop: true,
-        productCSS: true 
-    } );
+        path : '/' 
+      });
 });
 
 module.exports = shopRoutes;
