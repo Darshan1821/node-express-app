@@ -1,17 +1,17 @@
-const path = require('path');
-
 const express = require('express');
 
 const adminRoutes = express.Router();
-const rootDir = require('../util/path-helper');
+
+const products = [];
 
 adminRoutes.get('/product', (req, res, next) => {
-    res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
+    res.render('add-product', { title : 'Add Product', path : '/admin/product' });
 });
 
 adminRoutes.post('/product', (req, res, next) => {
-    console.log(req.body);
+    products.push( { title : req.body.title } );
     res.redirect('/');
 });
 
-module.exports = adminRoutes;
+exports.routes = adminRoutes;
+exports.products = products;
